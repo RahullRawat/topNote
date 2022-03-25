@@ -9,7 +9,7 @@ const Landing = () => {
 			<header className="header">
 				<a href="#" className="header-container">
 					<h4 className="xl-text">TopNote </h4>
-					<img src={noteIcon} alt="" className="note-logo" />
+					<img src={noteIcon} alt="note-logo" className="note-logo" />
 				</a>
 			</header>
 			<div className="hero-container">
