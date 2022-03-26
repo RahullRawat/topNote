@@ -1,0 +1,144 @@
+.landing-container {
+	max-width: 80vw;
+	height: 100vh;
+	margin: 4rem auto;
+}
+
+.header {
+	color: var(--cta-color);
+	width: 5rem;
+	height: 5rem;
+	margin-bottom: 10rem;
+}
+
+.header .header-container {
+	display: flex;
+	align-items: center;
+}
+
+.header .header-container h4 {
+	font-family: "Qwigley", cursive;
+	margin-right: 2rem;
+}
+
+.header .header-container .note-logo {
+	height: 100%;
+	width: 100%;
+}
+
+.hero-container {
+	display: flex;
+	align-items: center;
+	color: var(--light-white-color);
+}
+
+.hero-container-left {
+	width: 50%;
+}
+
+.hero-container-right {
+	width: 50%;
+}
+
+.hero-container-right > img {
+	width: 100%;
+}
+
+.hero-container .hero-container-left .heading > h1 {
+	font-size: 5rem;
+	line-height: 1.5;
+	font-weight: 500;
+	font-family: "Montserrat", sans-serif;
+}
+
+.heading-description > p {
+	margin: 3rem 0;
+	font-family: "Montserrat", sans-serif;
+	text-transform: capitalize;
+	letter-spacing: 3px;
+}
+
+.auth-container {
+	max-width: 20rem;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.auth-container > .btn-join {
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 1.2rem;
+	font-family: "Montserrat", sans-serif;
+	background-color: var(--cta-color);
+	margin-bottom: 0.5rem;
+}
+
+.auth-container > .btn-join > span {
+	font-size: 1.6rem;
+}
+
+.auth-container > .btn-signin {
+	font-size: 1.4rem;
+	font-family: "Montserrat", sans-serif;
+	background-color: transparent;
+}
+
+@media only screen and (max-width: 1200px) {
+	.header {
+		margin-bottom: 15rem;
+	}
+	.hero-container .hero-container-left .heading > h1 {
+		font-size: 4rem;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.header .header-container h4 {
+		font-size: 4rem;
+	}
+
+	.hero-container {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+
+	.hero-container-right {
+		width: 100%;
+	}
+
+	.hero-container-left {
+		width: 100%;
+	}
+
+	.hero-container .hero-container-left .heading > h1 {
+		font-size: 4.5rem;
+	}
+
+	.auth-container {
+		margin-bottom: 4rem;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.hero-container {
+		text-align: center;
+	}
+
+	.header .header-container h4 {
+		font-size: 3rem;
+	}
+
+	.hero-container .hero-container-left .heading > h1 {
+		font-size: 3.5rem;
+	}
+
+	.heading-description > p {
+		font-size: 1.8rem;
+	}
+
+	.auth-container {
+		margin: auto;
+		align-items: center;
+	}
+}
