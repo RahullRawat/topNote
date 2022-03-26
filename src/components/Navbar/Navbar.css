@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+.navbar-container {
+	color: var(--cta-color);
+	margin: 4rem 0;
+}
+
+.navbar-container .navbar-left {
+	width: 5rem;
+	height: 5rem;
+	display: flex;
+	align-items: center;
+}
+
+.navbar-container .navbar-brand {
+	margin-right: 2rem;
+}
+
+.navbar-container .navbar-brand > h4 {
+	font-family: "Qwigley", cursive;
+}
+
+.navbar-container .note-logo {
+	height: 100%;
+	width: 100%;
+}
+
+.navbar-right > a > .btn-join {
+	font-size: 1.6rem;
+	font-weight: 600;
+	padding: 1rem;
+	font-family: "Montserrat", sans-serif;
+	background-color: var(--cta-color);
+}
+
+@media only screen and (max-width: 1024px) {
+	.navbar-container .navbar-brand > h4 {
+		font-size: 4rem;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.navbar-container .navbar-brand > h4 {
+		font-size: 3rem;
+	}
+}
