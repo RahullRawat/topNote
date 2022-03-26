@@ -9,8 +9,8 @@ const Navbar = () => {
 			<div className="navbar-left">
 				<Link to="/" className="navbar-brand">
 					<h4 className="lg-text">TopNote </h4>
+					<img src={noteIcon} alt="note-logo" className="note-logo" />
 				</Link>
-				<img src={noteIcon} alt="note-logo" className="note-logo" />
 			</div>
 			<div className="navbar-right">
 				<Link to="/home">
