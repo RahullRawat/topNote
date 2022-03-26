@@ -4,8 +4,16 @@
 	--cta-color: #fec731;
 	--bg-color: #15141b;
 	--light-white-color: #e8e6e3;
+	--note-bg-color: #8ae0d6;
 }
 
 body {
 	background-color: var(--bg-color);
+}
+
+.App {
+	max-width: 80vw;
+	height: 100vh;
+	margin: 0 auto;
+	font-family: "Montserrat", sans-serif;
 }
