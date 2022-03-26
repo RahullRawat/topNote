@@ -1,17 +1,10 @@
 import React from "react";
 import "./Landing.css";
 import heroImg from "../../assets/hero-img.png";
-import noteIcon from "../../assets/note-icon.png";
 
 const Landing = () => {
 	return (
 		<div className="landing-container">
-			<header className="header">
-				<a href="#" className="header-container">
-					<h4 className="xl-text">TopNote </h4>
-					<img src={noteIcon} alt="note-logo" className="note-logo" />
-				</a>
-			</header>
 			<div className="hero-container">
 				<div className="hero-container-left">
 					<div className="heading ">

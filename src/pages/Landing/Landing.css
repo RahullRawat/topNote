@@ -1,29 +1,5 @@
 .landing-container {
-	max-width: 80vw;
-	height: 100vh;
-	margin: 4rem auto;
-}
-
-.header {
-	color: var(--cta-color);
-	width: 5rem;
-	height: 5rem;
-	margin-bottom: 10rem;
-}
-
-.header .header-container {
-	display: flex;
-	align-items: center;
-}
-
-.header .header-container h4 {
-	font-family: "Qwigley", cursive;
-	margin-right: 2rem;
-}
-
-.header .header-container .note-logo {
-	height: 100%;
-	width: 100%;
+	margin-top: 10rem;
 }
 
 .hero-container {
