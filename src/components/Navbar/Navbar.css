@@ -12,14 +12,18 @@
 }
 
 .navbar-container .navbar-brand {
+	display: flex;
+	align-items: center;
 	margin-right: 2rem;
+	width: 100%;
+	height: 100%;
 }
 
 .navbar-container .navbar-brand > h4 {
 	font-family: "Qwigley", cursive;
 }
 
-.navbar-container .note-logo {
+.navbar-container .navbar-brand .note-logo {
 	height: 100%;
 	width: 100%;
 }
