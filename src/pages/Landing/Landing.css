@@ -41,7 +41,7 @@
 	cursor: pointer;
 }
 
-.auth-container > .btn-join {
+.auth-container > a > .btn-join {
 	font-size: 2rem;
 	font-weight: 600;
 	padding: 1.2rem;
@@ -50,11 +50,11 @@
 	margin-bottom: 0.5rem;
 }
 
-.auth-container > .btn-join > span {
+.auth-container > a > .btn-join > span {
 	font-size: 1.6rem;
 }
 
-.auth-container > .btn-signin {
+.auth-container > a > .btn-signin {
 	font-size: 1.4rem;
 	font-family: "Montserrat", sans-serif;
 	background-color: transparent;
