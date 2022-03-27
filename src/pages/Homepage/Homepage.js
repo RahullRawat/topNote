@@ -1,7 +1,10 @@
 import React from "react";
 import "./Homepage.css";
+import { useAuth } from "../../context/AuthContext";
 
 const Homepage = () => {
+	const { authState } = useAuth();
+	const { userData } = authState;
 	return (
 		<div className="homepage-container">
 			<aside className="sidebar">
@@ -29,8 +32,8 @@ const Homepage = () => {
 						alt="profile-avatar"
 					/>
 					<div className="profile details">
-						<h6 className="sm-text">Rahul Rawat</h6>
-						<span className="sm-text">@rahulrawat</span>
+						<h6 className="sm-text">{userData.firstName}'s Notes</h6>
+						<span className="sm-text">@{userData.firstName}</span>
 					</div>
 				</div>
 			</aside>
