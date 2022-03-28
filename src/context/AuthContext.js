@@ -70,7 +70,7 @@ const AuthProvider = ({ children }) => {
 						token: response.data.encodedToken,
 					},
 				});
-				navigate("/");
+				navigate("/home");
 			}
 		} catch (err) {
 			authDispatch({ type: "ERROR" });
