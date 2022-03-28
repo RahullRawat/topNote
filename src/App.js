@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/Navbar/Navbar";
+import { Navbar } from "./components/index";
 import Mockman from "mockman-js";
 import { Landing, Homepage, Login, Signup } from "./pages/index";
 
