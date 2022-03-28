@@ -1,7 +1,8 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
-import { Landing, Homepage } from "./pages/index";
+import Mockman from "mockman-js";
+import { Landing, Homepage, Login, Signup } from "./pages/index";
 
 function App() {
 	return (
@@ -10,6 +11,9 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Landing />} />
 				<Route path="/home" element={<Homepage />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/signup" element={<Signup />} />
+				<Route path="/mock" element={<Mockman />} />
 			</Routes>
 		</div>
 	);

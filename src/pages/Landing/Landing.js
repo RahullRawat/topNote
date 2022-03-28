@@ -1,6 +1,7 @@
 import React from "react";
-import "./Landing.css";
+import { Link } from "react-router-dom";
 import heroImg from "../../assets/hero-img.png";
+import "./Landing.css";
 
 const Landing = () => {
 	return (
@@ -20,12 +21,16 @@ const Landing = () => {
 					</div>
 
 					<div className="auth-container">
-						<button className="btn btn-join">
-							Signup <span>- it's free</span>
-						</button>
-						<button className="btn btn-signin">
-							Already have an account ?
-						</button>
+						<Link to="/signup">
+							<button className="btn btn-join">
+								Signup <span>- it's free</span>
+							</button>
+						</Link>
+						<Link to="/login">
+							<button className="btn btn-signin">
+								Already have an account ?
+							</button>
+						</Link>
 					</div>
 				</div>
 				<div className="hero-container-right">
