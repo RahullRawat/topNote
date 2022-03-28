@@ -31,6 +31,7 @@ export const Signup = () => {
 							authDispatch({ type: "NAME", payload: e.target.value })
 						}
 						required
+						
 					/>
 
 					<label htmlFor="email">Email </label>
