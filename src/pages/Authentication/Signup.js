@@ -31,7 +31,7 @@ export const Signup = () => {
 							authDispatch({ type: "NAME", payload: e.target.value })
 						}
 						required
-						
+						autoComplete="off"
 					/>
 
 					<label htmlFor="email">Email </label>
@@ -45,6 +45,7 @@ export const Signup = () => {
 							authDispatch({ type: "SIGN_UP_EMAIL", payload: e.target.value })
 						}
 						required
+						autoComplete="off"
 					/>
 
 					<label htmlFor="password">Password </label>
@@ -61,6 +62,7 @@ export const Signup = () => {
 							})
 						}
 						required
+						autoComplete="off"
 					/>
 
 					<div className="term-condition">
