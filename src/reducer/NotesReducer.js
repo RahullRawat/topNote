@@ -18,6 +18,13 @@ const notesReducer = (state, action) => {
 				notes: action.payload,
 			};
 
+		case "EDIT_NOTE":
+			return {
+				...state,
+				title: action.payload.title,
+				content: action.payload.content,
+			};
+
 		case "RESET_FORM":
 			return {
 				...state,

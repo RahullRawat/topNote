@@ -4,6 +4,7 @@ import { useNotes } from "../../context/NotesContext";
 import { useAuth } from "../../context/AuthContext";
 import { addNote } from "../../Services/addNote";
 import { deleteNote } from "../../Services/deleteNote";
+import { NotesDisplay } from "../NotesDisplay/NotesDisplay";
 
 const NoteInput = () => {
 	const { notesState, notesDispatch } = useNotes();
@@ -19,6 +20,7 @@ const NoteInput = () => {
 			const newNotesText = {
 				title: title,
 				content: content,
+				createdTime: new Date().toLocaleString(),
 			};
 			addNote(newNotesText, token, notesDispatch);
 			notesDispatch({ type: "RESET_FORM" });
@@ -63,28 +65,13 @@ const NoteInput = () => {
 					<i className="fa-solid fa-plus" onClick={addNoteHandler}></i>
 				</div>
 			</form>
-			{notes.map((note) => {
-				return (
-					<div className="new-notes-container" key={note._id}>
-						<h1 className="note-title">{note.title}</h1>
-						<h4 className="note-content new-note">
-							{note.content}
-						</h4>
-						<div className="note-footer sm-text">
-							<h6>{new Date().toDateString()}</h6>
-							<div className="note-footer-icons">
-								<i className="fa-solid fa-palette"></i>
-								<i className="fa-solid fa-box-archive"></i>
-								<i className="fa-solid fa-pen"></i>
-								<i
-									className="fa-solid fa-trash"
-									onClick={() => deleteNotesHandler(note._id)}
-								></i>
-							</div>
-						</div>
-					</div>
-				);
-			})}
+			<NotesDisplay
+				notes={notes}
+				notesDispatch={notesDispatch}
+				deleteNotesHandler={deleteNotesHandler}
+				deleteNote={deleteNote}
+				token={token}
+			/>
 		</section>
 	);
 };

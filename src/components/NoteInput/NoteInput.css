@@ -74,5 +74,16 @@
 .new-notes-container .new-note {
 	height: 28rem;
 	margin-top: 0.2rem;
-	overflow-y: scroll;
+	overflow-y: auto;
+}
+
+/* width */
+.note-content::-webkit-scrollbar {
+	width: 12px;
+}
+
+/* Handle */
+.note-content::-webkit-scrollbar-thumb {
+	background: var(--bg-color);
+	border-radius: 10px;
 }
