@@ -1,0 +1,36 @@
+.sidebar {
+	width: 20%;
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: sticky;
+	top: 8rem;
+}
+
+.sidebar > ul > li {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	color: var(--light-white-color);
+	padding: 1rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	transition: 0.3s all ease-in;
+}
+
+.sidebar > ul > li:hover {
+	color: black;
+	background-color: var(--cta-color);
+	opacity: 0.9;
+}
+
+.fa-solid {
+	margin-right: 1rem;
+}
+
+.footer-profile {
+	display: flex;
+	align-items: center;
+	color: var(--light-white-color);
+	cursor: pointer;
+}
