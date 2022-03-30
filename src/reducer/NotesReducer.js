@@ -36,6 +36,7 @@ const notesReducer = (state, action) => {
 				...state,
 				title: "",
 				content: "",
+				tags: "",
 			};
 
 		default:
