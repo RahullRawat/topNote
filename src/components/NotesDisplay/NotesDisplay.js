@@ -32,6 +32,7 @@ const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch }) => {
 						>
 							<h6>{note.createdTime}</h6>
 							<h6 className="tag-bg">{note.tags}</h6>
+
 							<div className="note-footer-icons">
 								<i className="fa-solid fa-box-archive"></i>
 								<i
