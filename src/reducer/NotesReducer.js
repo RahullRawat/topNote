@@ -12,6 +12,12 @@ const notesReducer = (state, action) => {
 				content: action.payload,
 			};
 
+		case "NOTES_TAG":
+			return {
+				...state,
+				tags: action.payload,
+			};
+
 		case "ADD_NOTE":
 			return {
 				...state,
