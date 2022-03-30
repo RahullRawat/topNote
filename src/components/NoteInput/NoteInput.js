@@ -76,15 +76,19 @@ const NoteInput = () => {
 							onClick={() => setShowColorPicker(!showColorPicker)}
 						></i>
 						<i className="fa-solid fa-box-archive"></i>
-						<input
-							type="text"
-							placeholder="Tag"
-							className="tag"
+						<select
 							value={tags}
+							className="tag"
 							onChange={(e) =>
 								notesDispatch({ type: "NOTES_TAG", payload: e.target.value })
 							}
-						/>
+						>
+							<option>Tags</option>
+							<option value="meeting">Meeting</option>
+							<option value="shopping">Shopping</option>
+							<option value="grocery">Grocery</option>
+							<option value="work">Work</option>
+						</select>
 					</div>
 					<i
 						className="fa-solid fa-plus"
