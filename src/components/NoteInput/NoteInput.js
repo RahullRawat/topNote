@@ -86,7 +86,11 @@ const NoteInput = () => {
 							}
 						/>
 					</div>
-					<i className="fa-solid fa-plus" onClick={addNoteHandler}></i>
+					<i
+						className="fa-solid fa-plus"
+						style={{ color: `${bgColor}` }}
+						onClick={addNoteHandler}
+					></i>
 				</div>
 				{showColorPicker && (
 					<div>
