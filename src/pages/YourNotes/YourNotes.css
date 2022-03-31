@@ -31,3 +31,8 @@
 	margin-left: 1.5rem;
 	cursor: pointer;
 }
+
+.no-notes {
+	color: var(--light-white-color);
+	text-align: right;
+}
