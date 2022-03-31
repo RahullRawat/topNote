@@ -4,7 +4,7 @@ const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch }) => {
 	const editNotes = (note) => {
 		notesDispatch({
 			type: "EDIT_NOTE",
-			payload: { title: note.title, content: note.content },
+			payload: { title: note.title, content: note.content, tags: note.tags },
 		});
 		deleteNotesHandler(note._id);
 	};
