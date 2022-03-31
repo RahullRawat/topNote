@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
 				email,
 				password,
 			});
-			console.log(response);
 			if (response.status === 200) {
 				localStorage.setItem("token", response.data.encodedToken);
 				localStorage.setItem(

@@ -6,6 +6,7 @@ const NotesContext = createContext(null);
 const initialValue = {
 	title: "",
 	content: "",
+	tags: "",
 	notes: [],
 };
 

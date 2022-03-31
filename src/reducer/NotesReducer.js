@@ -12,6 +12,12 @@ const notesReducer = (state, action) => {
 				content: action.payload,
 			};
 
+		case "NOTES_TAG":
+			return {
+				...state,
+				tags: action.payload,
+			};
+
 		case "ADD_NOTE":
 			return {
 				...state,
@@ -23,6 +29,7 @@ const notesReducer = (state, action) => {
 				...state,
 				title: action.payload.title,
 				content: action.payload.content,
+				tags: action.payload.tags,
 			};
 
 		case "RESET_FORM":
@@ -30,6 +37,7 @@ const notesReducer = (state, action) => {
 				...state,
 				title: "",
 				content: "",
+				tags: "",
 			};
 
 		default:

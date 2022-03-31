@@ -1,6 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 import { useAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
 	const { authState } = useAuth();
@@ -8,21 +9,29 @@ const Sidebar = () => {
 	return (
 		<aside className="sidebar">
 			<ul>
-				<li>
-					<i className="fa-solid fa-house"></i>Home
-				</li>
-				<li>
-					<i class="fa-solid fa-tags"></i>Label
-				</li>
-				<li>
-					<i class="fa-solid fa-box-archive"></i>Archive
-				</li>
-				<li>
-					<i class="fa-solid fa-trash-can"></i>Trash
-				</li>
-				<li>
-					<i class="fa-solid fa-user"></i>Profile
-				</li>
+				<Link to="/home">
+					<li>
+						<i className="fa-solid fa-house"></i>Home
+					</li>
+				</Link>
+				<Link to="/yournotes">
+					<li>
+						<i class="fa-solid fa-tags"></i>Your Notes
+					</li>
+				</Link>
+				<Link to="/archive">
+					<li>
+						<i class="fa-solid fa-box-archive"></i>Archive
+					</li>
+				</Link>
+				<Link to="/trash">
+					<li>
+						<i class="fa-solid fa-trash-can"></i>Trash
+					</li>
+				</Link>
+				<Link to="/home">
+					<button className="btn btn-primary btn-tag ">Create Note</button>
+				</Link>
 			</ul>
 			<div className="footer-profile">
 				<img
