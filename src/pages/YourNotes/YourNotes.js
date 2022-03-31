@@ -23,7 +23,7 @@ const YourNotes = () => {
 	};
 
 	return (
-		<>
+		<div>
 			<div className="tag-btn-container lg-text">
 				<div className="filter-tag-container">
 					<h6 className="filter-by-tag">Filter By Tag :-</h6>
@@ -79,34 +79,38 @@ const YourNotes = () => {
 			<div className="homepage-container">
 				<Sidebar />
 				<div className="note-container">
-					{filteredNotes.map((note) => {
-						return (
-							<div className="new-notes-container" key={note._id}>
-								<h1
-									className="note-title"
-									style={{ backgroundColor: `${note.bgColor}` }}
-								>
-									{note.title}
-								</h1>
-								<h4
-									className="note-content new-note"
-									style={{ backgroundColor: `${note.bgColor}` }}
-								>
-									{note.content}
-								</h4>
-								<div
-									className="note-footer sm-text"
-									style={{ backgroundColor: `${note.bgColor}` }}
-								>
-									<h6>{note.createdTime}</h6>
-									<h6 className="tag-bg">{note.tags}</h6>
+					{notes.length === 0 ? (
+						<p className="no-notes lg-text  mt-4">No Notes Here</p>
+					) : (
+						filteredNotes.map((note) => {
+							return (
+								<div className="new-notes-container" key={note._id}>
+									<h1
+										className="note-title"
+										style={{ backgroundColor: `${note.bgColor}` }}
+									>
+										{note.title}
+									</h1>
+									<h4
+										className="note-content new-note"
+										style={{ backgroundColor: `${note.bgColor}` }}
+									>
+										{note.content}
+									</h4>
+									<div
+										className="note-footer sm-text"
+										style={{ backgroundColor: `${note.bgColor}` }}
+									>
+										<h6>{note.createdTime}</h6>
+										<h6 className="tag-bg">{note.tags}</h6>
+									</div>
 								</div>
-							</div>
-						);
-					})}
+							);
+						})
+					)}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
