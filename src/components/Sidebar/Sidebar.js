@@ -29,6 +29,9 @@ const Sidebar = () => {
 						<i class="fa-solid fa-trash-can"></i>Trash
 					</li>
 				</Link>
+				<Link to="/home">
+					<button className="btn btn-primary btn-tag ">Create Note</button>
+				</Link>
 			</ul>
 			<div className="footer-profile">
 				<img
