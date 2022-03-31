@@ -29,6 +29,7 @@ const notesReducer = (state, action) => {
 				...state,
 				title: action.payload.title,
 				content: action.payload.content,
+				tags: action.payload.tags,
 			};
 
 		case "RESET_FORM":
