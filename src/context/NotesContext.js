@@ -8,6 +8,7 @@ const initialValue = {
 	content: "",
 	tags: "",
 	notes: [],
+	archiveNotes: [],
 };
 
 const NotesProvider = ({ children }) => {
