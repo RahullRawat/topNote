@@ -7,7 +7,6 @@ const addNote = async (newNotesText, token, notesDispatch) => {
 			{ note: newNotesText },
 			{ headers: { authorization: token } }
 		);
-		console.log(response.data);
 		if (response.status === 201) {
 			notesDispatch({ type: "ADD_NOTE", payload: response.data.notes });
 		} else {
