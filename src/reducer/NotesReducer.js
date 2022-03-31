@@ -40,6 +40,25 @@ const notesReducer = (state, action) => {
 				tags: "",
 			};
 
+		case "ARCHIVE_NOTE":
+			return {
+				...state,
+				notes: action.payload.notes,
+				archiveNotes: action.payload.archives,
+			};
+
+		case "RESTORE_ARCHIVE_NOTE":
+			return {
+				...state,
+				notes: action.payload.notes,
+				archiveNotes: action.payload.archives,
+			};
+		case "DELETE_ARCHIVE_NOTE":
+			return {
+				...state,
+				archiveNotes: action.payload.archives,
+			};
+
 		default:
 			return {
 				state,
