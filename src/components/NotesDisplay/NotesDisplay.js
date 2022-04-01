@@ -14,6 +14,11 @@ const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch, token }) => {
 		addToArchive(note, token, notesDispatch);
 	};
 
+	const moveToTrash = (note) => {
+		notesDispatch({ type: "MOVE_TO_TRASH", payload: note });
+		deleteNotesHandler(note._id);
+	};
+
 	return (
 		<>
 			{notes.map((note) => {
@@ -49,7 +54,7 @@ const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch, token }) => {
 								></i>
 								<i
 									className="fa-solid fa-trash"
-									onClick={() => deleteNotesHandler(note._id)}
+									onClick={() => moveToTrash(note)}
 								></i>
 							</div>
 						</div>
