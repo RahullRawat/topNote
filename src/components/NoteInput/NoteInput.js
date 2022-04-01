@@ -19,7 +19,6 @@ const NoteInput = () => {
 
 	const addNoteHandler = (e) => {
 		e.preventDefault();
-		setShowColorPicker(!showColorPicker);
 
 		if (title.trim().length > 0 || content.trim().length > 0) {
 			const newNotesText = {
