@@ -10,7 +10,7 @@ const addToArchive = async (note, token, notesDispatch) => {
 		if (response.status === 201) {
 			notesDispatch({ type: "ARCHIVE_NOTE", payload: response.data });
 		} else {
-			throw new Error();
+			throw new Error("Something went wrong !!");
 		}
 	} catch (error) {
 		alert(error);
