@@ -59,6 +59,18 @@ const notesReducer = (state, action) => {
 				archiveNotes: action.payload.archives,
 			};
 
+		case "MOVE_TO_TRASH":
+			return {
+				...state,
+				trash: [...state.trash, action.payload],
+			};
+
+		case "DELETE_NOTE_FROM_TRASH":
+			return {
+				...state,
+				trash: state.trash.filter((note) => note._id !== action.payload._id),
+			};
+
 		default:
 			return {
 				state,

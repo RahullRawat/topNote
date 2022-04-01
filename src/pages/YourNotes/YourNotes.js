@@ -22,6 +22,29 @@ const YourNotes = () => {
 		setFilteredNotes(notes);
 	};
 
+	const sortByDateHandler = (e) => {
+		if (e.target.value === "sort-newest") {
+			const sortedNotes = [...notes].sort((date1, date2) =>
+				date2.createdTime
+					.split("/")
+					.reverse()
+					.join()
+					.localeCompare(date1.createdTime.split("/").reverse().join())
+			);
+			setFilteredNotes(sortedNotes);
+		}
+		if (e.target.value === "sort-oldest") {
+			const sortedNotes = [...notes].sort((date1, date2) =>
+				date1.createdTime
+					.split("/")
+					.reverse()
+					.join()
+					.localeCompare(date2.createdTime.split("/").reverse().join())
+			);
+			setFilteredNotes(sortedNotes);
+		}
+	};
+
 	return (
 		<div>
 			<div className="tag-btn-container lg-text">
@@ -68,10 +91,24 @@ const YourNotes = () => {
 					<h6 className="filter-by-tag">Sort By Date :-</h6>
 					<div className="filter-btn-container">
 						<label htmlFor="date1">
-							<input type="radio" id="date1" name="date" /> Date Newest
+							<input
+								type="radio"
+								id="date1"
+								name="date"
+								value="sort-newest"
+								onChange={(e) => sortByDateHandler(e)}
+							/>
+							Date Newest
 						</label>
 						<label htmlFor="date">
-							<input type="radio" id="date" name="date" /> Date Oldest
+							<input
+								type="radio"
+								id="date"
+								name="date"
+								value="sort-oldest"
+								onChange={(e) => sortByDateHandler(e)}
+							/>
+							Date Oldest
 						</label>
 					</div>
 				</div>

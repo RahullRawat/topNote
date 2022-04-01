@@ -9,8 +9,10 @@ const initialValue = {
 	tags: "",
 	notes: [],
 	archiveNotes: [],
+	trash: [],
 };
 
+// console.log(trash);
 const NotesProvider = ({ children }) => {
 	const [notesState, notesDispatch] = useReducer(notesReducer, initialValue);
 	return (
