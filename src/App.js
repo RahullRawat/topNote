@@ -9,6 +9,7 @@ import {
 	Signup,
 	YourNotes,
 	Archive,
+	Trash,
 } from "./pages/index";
 
 function App() {
@@ -22,7 +23,9 @@ function App() {
 				<Route path="/signup" element={<Signup />} />
 				<Route path="/yournotes" element={<YourNotes />} />
 				<Route path="/archive" element={<Archive />} />
+				<Route path="/trash" element={<Trash />} />
 				<Route path="/mock" element={<Mockman />} />
+				<Route path="*" element={<p>There's nothing here!</p>} />
 			</Routes>
 		</div>
 	);
