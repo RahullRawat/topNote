@@ -1,12 +1,17 @@
 import React from "react";
+import { addToArchive } from "../../Services/addToArchive";
 
-const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch }) => {
+const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch, token }) => {
 	const editNotes = (note) => {
 		notesDispatch({
 			type: "EDIT_NOTE",
 			payload: { title: note.title, content: note.content, tags: note.tags },
 		});
 		deleteNotesHandler(note._id);
+	};
+
+	const archiveNoteHandler = (note) => {
+		addToArchive(note, token, notesDispatch);
 	};
 
 	return (
@@ -34,7 +39,10 @@ const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch }) => {
 							<h6 className="tag-bg">{note.tags}</h6>
 
 							<div className="note-footer-icons">
-								<i className="fa-solid fa-box-archive"></i>
+								<i
+									className="fa-solid fa-box-archive"
+									onClick={() => archiveNoteHandler(note)}
+								></i>
 								<i
 									className="fa-solid fa-pen"
 									onClick={() => editNotes(note)}
