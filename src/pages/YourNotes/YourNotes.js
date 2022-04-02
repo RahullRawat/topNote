@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import parse from "html-react-parser";
 import "./YourNotes.css";
 import { Sidebar } from "../../components/index";
 import { useNotes } from "../../context/NotesContext";
@@ -83,7 +84,7 @@ const YourNotes = () => {
 							className="btn btn-primary btn-tag"
 							onClick={clearTagFilterHandler}
 						>
-							Clear
+							All
 						</button>
 					</div>
 				</div>
@@ -126,13 +127,13 @@ const YourNotes = () => {
 										className="note-title"
 										style={{ backgroundColor: `${note.bgColor}` }}
 									>
-										{note.title}
+										{parse(note.title)}
 									</h1>
 									<h4
 										className="note-content new-note"
 										style={{ backgroundColor: `${note.bgColor}` }}
 									>
-										{note.content}
+										{parse(note.content)}
 									</h4>
 									<div
 										className="note-footer sm-text"
