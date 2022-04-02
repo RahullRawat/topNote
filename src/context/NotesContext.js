@@ -4,15 +4,12 @@ import { notesReducer } from "../reducer/NotesReducer";
 const NotesContext = createContext(null);
 
 const initialValue = {
-	title: "",
-	content: "",
 	tags: "",
 	notes: [],
 	archiveNotes: [],
 	trash: [],
 };
 
-// console.log(trash);
 const NotesProvider = ({ children }) => {
 	const [notesState, notesDispatch] = useReducer(notesReducer, initialValue);
 	return (
