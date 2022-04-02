@@ -107,3 +107,23 @@
 	background: var(--bg-color);
 	border-radius: 10px;
 }
+
+/* Quill css */
+.quill .ql-editor {
+	min-height: 5rem;
+}
+.quill .ql-toolbar.ql-snow {
+	border: none;
+}
+.quill .ql-container.ql-snow {
+	border: none;
+}
+
+.quill-note-title {
+	border-radius: 0.8rem 0.8rem 0 0;
+}
+
+.quill-note-content {
+	min-height: 25rem;
+	padding: 1rem 0 0 0;
+}

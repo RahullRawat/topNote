@@ -1,11 +1,21 @@
 import React from "react";
 import { addToArchive } from "../../Services/addToArchive";
+import parse from "html-react-parser";
 
-const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch, token }) => {
+const NotesDisplay = ({
+	notes,
+	deleteNotesHandler,
+	notesDispatch,
+	token,
+	setNoteTitle,
+	setNoteContent,
+}) => {
 	const editNotes = (note) => {
+		setNoteTitle(note.title);
+		setNoteContent(note.content);
 		notesDispatch({
 			type: "EDIT_NOTE",
-			payload: { title: note.title, content: note.content, tags: note.tags },
+			payload: { tags: note.tags },
 		});
 		deleteNotesHandler(note._id);
 	};
@@ -28,13 +38,13 @@ const NotesDisplay = ({ notes, deleteNotesHandler, notesDispatch, token }) => {
 							className="note-title"
 							style={{ backgroundColor: `${note.bgColor}` }}
 						>
-							{note.title}
+							{parse(note.title)}
 						</h1>
 						<h4
 							className="note-content new-note"
 							style={{ backgroundColor: `${note.bgColor}` }}
 						>
-							{note.content}
+							{parse(note.content)}
 						</h4>
 						<div
 							className="note-footer sm-text"

@@ -6,10 +6,13 @@ import { useAuth } from "../../context/AuthContext";
 import { addNote } from "../../Services/addNote";
 import { deleteNote } from "../../Services/deleteNote";
 import { NotesDisplay } from "../NotesDisplay/NotesDisplay";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import { formats, modules } from "../QuillModule";
 
 const NoteInput = () => {
 	const { notesState, notesDispatch } = useNotes();
-	const { title, content, notes, tags } = notesState;
+	const { notes, tags } = notesState;
 
 	const { authState } = useAuth();
 	const { token } = authState;
@@ -17,19 +20,23 @@ const NoteInput = () => {
 	const [bgColor, setBgColor] = useState("#67d7cc");
 	const [showColorPicker, setShowColorPicker] = useState(false);
 
+	const [noteTitle, setNoteTitle] = useState("");
+	const [noteContent, setNoteContent] = useState("");
 	const addNoteHandler = (e) => {
 		e.preventDefault();
 
-		if (title.trim().length > 0 || content.trim().length > 0) {
+		if (noteTitle.trim().length > 0 || noteContent.trim().length > 0) {
 			const newNotesText = {
-				title: title,
-				content: content,
+				title: noteTitle,
+				content: noteContent,
 				bgColor: bgColor,
 				tags: tags,
 				createdTime: new Date().toLocaleString(),
 			};
 			addNote(newNotesText, token, notesDispatch);
 			notesDispatch({ type: "RESET_FORM" });
+			setNoteTitle("");
+			setNoteContent("");
 		} else {
 			alert("Notes can't be blank");
 		}
@@ -42,29 +49,25 @@ const NoteInput = () => {
 	return (
 		<section className="note-container">
 			<form>
-				<input
+				<ReactQuill
 					style={{ backgroundColor: `${bgColor}` }}
-					type="text"
-					name="title"
-					className="note-title"
-					placeholder="Title"
-					value={title}
-					onChange={(e) =>
-						notesDispatch({ type: "NOTES_TITLE", payload: e.target.value })
-					}
+					modules={modules}
+					formats={formats}
+					value={noteTitle}
+					className="quill-note-title"
+					onChange={(e) => setNoteTitle(e)}
+					placeholder="Your title..."
 				/>
-				<textarea
+				<ReactQuill
 					style={{ backgroundColor: `${bgColor}` }}
-					name="content"
-					cols="30"
-					rows="10"
-					placeholder="Type your note..."
-					className="note-content"
-					value={content}
-					onChange={(e) =>
-						notesDispatch({ type: "NOTES_CONTENT", payload: e.target.value })
-					}
-				></textarea>
+					modules={modules}
+					formats={formats}
+					value={noteContent}
+					onChange={(e) => setNoteContent(e)}
+					placeholder="Take a note..."
+					className="quill-note-content"
+				/>
+
 				<div
 					className="note-footer sm-text"
 					style={{ backgroundColor: `${bgColor}` }}
@@ -112,6 +115,8 @@ const NoteInput = () => {
 				deleteNotesHandler={deleteNotesHandler}
 				deleteNote={deleteNote}
 				token={token}
+				setNoteTitle={setNoteTitle}
+				setNoteContent={setNoteContent}
 			/>
 		</section>
 	);

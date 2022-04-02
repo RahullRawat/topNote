@@ -1,4 +1,5 @@
 import React from "react";
+import parse from "html-react-parser";
 import { Sidebar } from "../../components";
 import { useNotes } from "../../context/NotesContext";
 import { useAuth } from "../../context/AuthContext";
@@ -34,13 +35,13 @@ const Trash = () => {
 										className="note-title"
 										style={{ backgroundColor: `${note.bgColor}` }}
 									>
-										{note.title}
+										{parse(note.title)}
 									</h1>
 									<h4
 										className="note-content new-note"
 										style={{ backgroundColor: `${note.bgColor}` }}
 									>
-										{note.content}
+										{parse(note.content)}
 									</h4>
 									<div
 										className="note-footer sm-text"
