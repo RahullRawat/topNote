@@ -1,8 +1,19 @@
+.note-wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.note-input-container {
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+}
+
 .note-container {
 	display: grid;
 	grid-gap: 2rem;
 	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -83,7 +94,7 @@
 }
 
 .note-footer > .fa-plus {
-	font-size: 2rem;
+	font-size: 2.5rem;
 	padding: 0.5rem 0.7rem;
 	border-radius: 50%;
 	color: var(--note-bg-color);
@@ -92,7 +103,7 @@
 }
 
 .new-notes-container .new-note {
-	height: 28rem;
+	height: 15rem;
 	margin-top: 0.2rem;
 	overflow-y: auto;
 }
@@ -124,6 +135,24 @@
 }
 
 .quill-note-content {
-	min-height: 25rem;
+	min-height: 15rem;
 	padding: 1rem 0 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.note-container {
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	}
+}
+@media screen and (max-width: 768px) {
+	.note-wrapper {
+		width: 100%;
+	}
+	.note-input-container {
+		width: 100%;
+	}
+	.note-container {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		width: 100%;
+	}
 }
