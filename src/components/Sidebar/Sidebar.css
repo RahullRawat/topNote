@@ -18,7 +18,7 @@
 	transition: 0.3s all ease-in;
 }
 
-.sidebar > ul > li:hover {
+.sidebar > ul > a > li:hover {
 	color: black;
 	background-color: var(--cta-color);
 	opacity: 0.9;
@@ -33,4 +33,15 @@
 	align-items: center;
 	color: var(--light-white-color);
 	cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+	.sidebar {
+		width: 30%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.sidebar {
+		display: none;
+	}
 }
