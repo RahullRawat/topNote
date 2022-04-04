@@ -47,78 +47,81 @@ const NoteInput = () => {
 	};
 
 	return (
-		<section className="note-container">
-			<form>
-				<ReactQuill
-					style={{ backgroundColor: `${bgColor}` }}
-					modules={modules}
-					formats={formats}
-					value={noteTitle}
-					className="quill-note-title"
-					onChange={(e) => setNoteTitle(e)}
-					placeholder="Your title..."
-				/>
-				<ReactQuill
-					style={{ backgroundColor: `${bgColor}` }}
-					modules={modules}
-					formats={formats}
-					value={noteContent}
-					onChange={(e) => setNoteContent(e)}
-					placeholder="Take a note..."
-					className="quill-note-content"
-				/>
+		<div className="note-wrapper">
+			<div className="note-input-container">
+				<form>
+					<ReactQuill
+						style={{ backgroundColor: `${bgColor}` }}
+						modules={modules}
+						formats={formats}
+						value={noteTitle}
+						className="quill-note-title"
+						onChange={(e) => setNoteTitle(e)}
+						placeholder="Your title..."
+					/>
+					<ReactQuill
+						style={{ backgroundColor: `${bgColor}` }}
+						modules={modules}
+						formats={formats}
+						value={noteContent}
+						onChange={(e) => setNoteContent(e)}
+						placeholder="Take a note..."
+						className="quill-note-content"
+					/>
 
-				<div
-					className="note-footer sm-text"
-					style={{ backgroundColor: `${bgColor}` }}
-				>
-					<div className="note-footer-icons">
+					<div
+						className="note-footer sm-text"
+						style={{ backgroundColor: `${bgColor}` }}
+					>
+						<div className="note-footer-icons">
+							<i
+								className="fa-solid fa-palette"
+								onClick={() => setShowColorPicker(!showColorPicker)}
+							></i>
+							<select
+								value={tags}
+								className="tag"
+								onChange={(e) =>
+									notesDispatch({ type: "NOTES_TAG", payload: e.target.value })
+								}
+							>
+								<option>Tags</option>
+								<option value="meeting">Meeting</option>
+								<option value="shopping">Shopping</option>
+								<option value="grocery">Grocery</option>
+								<option value="work">Work</option>
+							</select>
+						</div>
 						<i
-							className="fa-solid fa-palette"
-							onClick={() => setShowColorPicker(!showColorPicker)}
+							className="fa-solid fa-plus"
+							style={{ color: `${bgColor}` }}
+							onClick={addNoteHandler}
 						></i>
-						<i className="fa-solid fa-box-archive"></i>
-						<select
-							value={tags}
-							className="tag"
-							onChange={(e) =>
-								notesDispatch({ type: "NOTES_TAG", payload: e.target.value })
-							}
-						>
-							<option>Tags</option>
-							<option value="meeting">Meeting</option>
-							<option value="shopping">Shopping</option>
-							<option value="grocery">Grocery</option>
-							<option value="work">Work</option>
-						</select>
 					</div>
-					<i
-						className="fa-solid fa-plus"
-						style={{ color: `${bgColor}` }}
-						onClick={addNoteHandler}
-					></i>
-				</div>
-				{showColorPicker && (
-					<div>
-						<ChromePicker
-							width={400}
-							height={100}
-							bgColor={bgColor}
-							onChange={(updatedColor) => setBgColor(updatedColor.hex)}
-						/>
-					</div>
-				)}
-			</form>
-			<NotesDisplay
-				notes={notes}
-				notesDispatch={notesDispatch}
-				deleteNotesHandler={deleteNotesHandler}
-				deleteNote={deleteNote}
-				token={token}
-				setNoteTitle={setNoteTitle}
-				setNoteContent={setNoteContent}
-			/>
-		</section>
+					{showColorPicker && (
+						<div>
+							<ChromePicker
+								width={400}
+								height={100}
+								bgColor={bgColor}
+								onChange={(updatedColor) => setBgColor(updatedColor.hex)}
+							/>
+						</div>
+					)}
+				</form>
+			</div>
+			<section className="note-container">
+				<NotesDisplay
+					notes={notes}
+					notesDispatch={notesDispatch}
+					deleteNotesHandler={deleteNotesHandler}
+					deleteNote={deleteNote}
+					token={token}
+					setNoteTitle={setNoteTitle}
+					setNoteContent={setNoteContent}
+				/>
+			</section>
+		</div>
 	);
 };
 

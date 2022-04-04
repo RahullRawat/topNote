@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 .navbar-container {
 	color: var(--cta-color);
-	margin: 4rem 0;
+	height: 12rem;
 }
 
 .navbar-container .navbar-left {
@@ -28,6 +28,12 @@
 	width: 100%;
 }
 
+.navbar-left > .fa-bars {
+	font-size: 3rem;
+	cursor: pointer;
+	display: none;
+}
+
 .navbar-right > a > .btn-join {
 	font-size: 1.6rem;
 	font-weight: 600;
@@ -36,14 +42,68 @@
 	background-color: var(--cta-color);
 }
 
-@media only screen and (max-width: 1024px) {
-	.navbar-container .navbar-brand > h4 {
-		font-size: 4rem;
-	}
+/* mobile-sidebar */
+.mobile-sidebar {
+	width: 20%;
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: absolute;
+	left: -40%;
+	top: 12%;
+	background-color: var(--cta-color);
+	z-index: 10;
 }
 
-@media only screen and (max-width: 600px) {
+.show-aside {
+	width: 30rem;
+	left: 0%;
+	top: 12%;
+	height: 88vh;
+	padding: 2rem 0 2rem 4rem;
+	transition: 0.4s all ease-in-out;
+	border-radius: 0 1rem 1rem 0;
+}
+
+.mobile-sidebar > ul > a > li {
+	color: black;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	transition: 0.3s all ease-in;
+}
+
+.mobile-sidebar > ul a > li:hover {
+	font-size: 2.1rem;
+	font-weight: 800;
+	opacity: 0.9;
+}
+
+.fa-solid {
+	margin-right: 1rem;
+}
+
+.footer-profile {
+	display: flex;
+	align-items: center;
+	color: var(--light-white-color);
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
 	.navbar-container .navbar-brand > h4 {
-		font-size: 3rem;
+		font-size: 2.5rem;
+	}
+
+	.navbar-right > a > .btn-join {
+		font-size: 1.4rem;
+		min-width: 8rem;
+	}
+
+	.navbar-left > .fa-bars {
+		display: block;
 	}
 }
