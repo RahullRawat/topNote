@@ -27,7 +27,8 @@ body {
 }
 
 @media screen and (max-width: 475px) {
-	.Toastify__toast--success {
+	.Toastify__toast--success,
+	.Toastify__toast--error {
 		max-width: 300px;
 		margin: 0 auto;
 	}
