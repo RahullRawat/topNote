@@ -17,3 +17,18 @@ body {
 	margin: 0 auto;
 	font-family: "Montserrat", sans-serif;
 }
+
+.Toastify__toast--success {
+	font-size: 1.8rem;
+}
+
+.Toastify__toast--error {
+	font-size: 1.8rem;
+}
+
+@media screen and (max-width: 475px) {
+	.Toastify__toast--success {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+}

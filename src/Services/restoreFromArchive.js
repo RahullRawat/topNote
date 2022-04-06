@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const restoreFromArchive = async (note, token, notesDispatch) => {
 	try {
@@ -10,11 +11,12 @@ const restoreFromArchive = async (note, token, notesDispatch) => {
 
 		if (response.status === 200) {
 			notesDispatch({ type: "RESTORE_ARCHIVE_NOTE", payload: response.data });
+			toast.success("Note restored from archive");
 		} else {
-			throw new Error();
+			throw new Error("Something went wrong !!");
 		}
 	} catch (error) {
-		return error;
+		toast.error(error.response.data.errors[0]);
 	}
 };
 

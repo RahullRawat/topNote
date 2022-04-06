@@ -71,17 +71,21 @@ const Navbar = () => {
 						</li>
 					</Link>
 				</ul>
-				<div className="footer-profile">
-					<img
-						src="https://meta-ui.netlify.app/assets/first-avatar.jpg"
-						class="avatar avatar-sm"
-						alt="profile-avatar"
-					/>
-					<div className="profile details">
-						<h6 className="sm-text">{authState.userData.firstName}'s Notes</h6>
-						<span className="sm-text">@{authState.userData.firstName}</span>
+				{authState.userData && (
+					<div className="footer-profile">
+						<img
+							src="https://meta-ui.netlify.app/assets/first-avatar.jpg"
+							class="avatar avatar-sm"
+							alt="profile-avatar"
+						/>
+						<div className="profile details">
+							<h6 className="sm-text">
+								{authState.userData.firstName}'s Notes
+							</h6>
+							<span className="sm-text">@{authState.userData.firstName}</span>
+						</div>
 					</div>
-				</div>
+				)}
 			</aside>
 		</>
 	);

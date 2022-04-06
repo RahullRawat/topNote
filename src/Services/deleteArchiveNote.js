@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const deleteArchiveNote = async (note, token, notesDispatch) => {
 	try {
@@ -7,11 +8,12 @@ const deleteArchiveNote = async (note, token, notesDispatch) => {
 		});
 		if (response.status === 200) {
 			notesDispatch({ type: "DELETE_ARCHIVE_NOTE", payload: response.data });
+			toast.error("Archived Note deleted permanently");
 		} else {
-			throw new Error();
+			throw new Error("Something went wrong !!");
 		}
 	} catch (error) {
-		return error;
+		toast.error(error.response.data.errors[0]);
 	}
 };
 

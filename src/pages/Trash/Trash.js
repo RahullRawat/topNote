@@ -4,6 +4,7 @@ import { Sidebar } from "../../components";
 import { useNotes } from "../../context/NotesContext";
 import { useAuth } from "../../context/AuthContext";
 import { addNote } from "../../Services/addNote";
+import { toast } from "react-toastify";
 
 const Trash = () => {
 	const { notesState, notesDispatch } = useNotes();
@@ -14,10 +15,12 @@ const Trash = () => {
 	const restoreFromTrash = (note) => {
 		addNote(note, token, notesDispatch);
 		notesDispatch({ type: "DELETE_NOTE_FROM_TRASH", payload: note });
+		toast.success("Note restored from trash");
 	};
 
 	const deleteNotesFromTrashHandler = (note) => {
 		notesDispatch({ type: "DELETE_NOTE_FROM_TRASH", payload: note });
+		toast.error("Note deleted permanently");
 	};
 
 	return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { addToArchive } from "../../Services/addToArchive";
 import parse from "html-react-parser";
+import { toast } from "react-toastify";
 
 const NotesDisplay = ({
 	notes,
@@ -27,6 +28,7 @@ const NotesDisplay = ({
 	const moveToTrash = (note) => {
 		notesDispatch({ type: "MOVE_TO_TRASH", payload: note });
 		deleteNotesHandler(note._id);
+		toast.success("Note moved to trash");
 	};
 
 	return (
