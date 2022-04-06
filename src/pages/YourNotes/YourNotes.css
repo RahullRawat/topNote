@@ -1,3 +1,7 @@
+.your-notes-container {
+	width: 100%;
+}
+
 .tag-btn-container {
 	display: flex;
 	flex-direction: column;
@@ -7,12 +11,14 @@
 }
 
 .tag-btn-container .filter-tag-container .filter-btn-container > button {
-	margin: 0 2rem 0rem 2rem;
+	margin: 0 1rem;
 }
 
 .btn-tag {
 	color: var(--bg-color);
 	background-color: var(--cta-color);
+	min-width: fit-content;
+	padding: 0.5rem 1.5rem;
 }
 
 .filter-tag-container {
@@ -26,7 +32,7 @@
 }
 
 .filter-tag-container .filter-btn-container > label {
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: var(--cta-color);
 	margin-left: 1.5rem;
 	cursor: pointer;
@@ -35,4 +41,40 @@
 .no-notes {
 	color: var(--light-white-color);
 	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.tag-btn-container {
+		align-items: flex-start;
+	}
+}
+
+@media screen and (max-width: 475px) {
+	.btn-tag {
+		padding: 0.5rem;
+	}
+
+	.tag-btn-container {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.filter-tag-container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.filter-tag-container .filter-btn-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tag-btn-container .filter-tag-container .filter-btn-container > button {
+		margin: 0.8rem 0;
+	}
+
+	.filter-tag-container .filter-btn-container > label {
+		margin: 0;
+	}
 }
