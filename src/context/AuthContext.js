@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { authReducer } from "../reducer/AuthReducer";
 import { toast } from "react-toastify";
@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
 	const [authState, authDispatch] = useReducer(authReducer, initialState);
 	const { email, password, firstName } = authState;
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const logIn = async () => {
 		try {
@@ -42,6 +43,7 @@ const AuthProvider = ({ children }) => {
 				});
 				navigate("/home");
 				toast.success("Successfully Logged In");
+				navigate(location?.state?.pathname || -1, { replace: true });
 			}
 		} catch (error) {
 			toast.error(error.response.data.errors[0]);
