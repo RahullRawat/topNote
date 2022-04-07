@@ -10,6 +10,7 @@ import {
 	YourNotes,
 	Archive,
 	Trash,
+	Error404,
 } from "./pages/index";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -39,7 +40,7 @@ function App() {
 				<Route path="/archive" element={<Archive />} />
 				<Route path="/trash" element={<Trash />} />
 				<Route path="/mock" element={<Mockman />} />
-				<Route path="*" element={<p>There's nothing here!</p>} />
+				<Route path="*" element={<Error404 />} />
 			</Routes>
 		</div>
 	);
