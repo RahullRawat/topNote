@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/index";
+import { Navbar, RequireAuth } from "./components/index";
 import Mockman from "mockman-js";
 import {
 	Landing,
@@ -33,12 +33,40 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />
-				<Route path="/home" element={<Homepage />} />
+				<Route
+					path="/home"
+					element={
+						<RequireAuth>
+							<Homepage />
+						</RequireAuth>
+					}
+				/>
 				<Route path="/login" element={<Login />} />
 				<Route path="/signup" element={<Signup />} />
-				<Route path="/yournotes" element={<YourNotes />} />
-				<Route path="/archive" element={<Archive />} />
-				<Route path="/trash" element={<Trash />} />
+				<Route
+					path="/yournotes"
+					element={
+						<RequireAuth>
+							<YourNotes />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path="/archive"
+					element={
+						<RequireAuth>
+							<Archive />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path="/trash"
+					element={
+						<RequireAuth>
+							<Trash />
+						</RequireAuth>
+					}
+				/>
 				<Route path="/mock" element={<Mockman />} />
 				<Route path="*" element={<Error404 />} />
 			</Routes>
