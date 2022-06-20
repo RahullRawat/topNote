@@ -14,6 +14,15 @@ const NoteInput = () => {
 	const { notesState, notesDispatch } = useNotes();
 	const { notes, tags } = notesState;
 
+	const [searchQuery, setSearchQuery] = useState("");
+
+	const searchNotes = searchQuery
+		? notes.filter(
+				(note) =>
+					note.title.includes(searchQuery) || note.content.includes(searchQuery)
+		  )
+		: notes;
+
 	const { authState } = useAuth();
 	const { token } = authState;
 
@@ -49,6 +58,13 @@ const NoteInput = () => {
 	return (
 		<div className="note-wrapper">
 			<div className="note-input-container">
+				<input
+					type="search"
+					className="search-input"
+					placeholder="Enter Search Query"
+					value={searchQuery}
+					onChange={(e) => setSearchQuery(e.target.value)}
+				/>
 				<form>
 					<ReactQuill
 						style={{ backgroundColor: `${bgColor}` }}
@@ -119,6 +135,7 @@ const NoteInput = () => {
 					token={token}
 					setNoteTitle={setNoteTitle}
 					setNoteContent={setNoteContent}
+					searchNotes={searchNotes}
 				/>
 			</section>
 		</div>
