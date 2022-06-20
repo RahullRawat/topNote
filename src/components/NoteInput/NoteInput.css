@@ -9,6 +9,15 @@
 	margin-bottom: 2rem;
 }
 
+.search-input {
+	width: 100%;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: none;
+	font-size: 1.6rem;
+}
+
 .note-container {
 	display: grid;
 	grid-gap: 2rem;

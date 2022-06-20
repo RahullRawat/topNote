@@ -10,6 +10,7 @@ const NotesDisplay = ({
 	token,
 	setNoteTitle,
 	setNoteContent,
+	searchNotes,
 }) => {
 	const editNotes = (note) => {
 		setNoteTitle(note.title);
@@ -33,7 +34,7 @@ const NotesDisplay = ({
 
 	return (
 		<>
-			{notes.map((note) => {
+			{searchNotes.map((note) => {
 				return (
 					<div className="new-notes-container" key={note._id}>
 						<h1
