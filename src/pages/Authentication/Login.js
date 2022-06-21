@@ -13,8 +13,8 @@ export const Login = () => {
 	};
 	const guestLoginHandler = (e) => {
 		e.preventDefault();
-		authDispatch({ type: "LOG_IN_EMAIL", payload: "adarshbalika@gmail.com" });
-		authDispatch({ type: "LOG_IN_PASSWORD", payload: "adarshBalika123" });
+		authDispatch({ type: "LOG_IN_EMAIL", payload: "rahulsingh@gmail.com" });
+		authDispatch({ type: "LOG_IN_PASSWORD", payload: "rahulsingh" });
 	};
 	return (
 		<section className="login-container">
@@ -63,7 +63,7 @@ export const Login = () => {
 						Login
 					</button>
 					<button className="btn btn-guest-login" onClick={guestLoginHandler}>
-						Guest Login
+						Guest Credentials
 					</button>
 
 					<div className="no-account">
